@@ -17,9 +17,11 @@ After including jquery.readmore.js in your page..
   Div with awfully long text [...]
 </div>
 <span id="link">Read more</span>
+```
 
 ```js
 $("#long_text").readmore({
 	link : "#link",
   height: 200
 });
+```
