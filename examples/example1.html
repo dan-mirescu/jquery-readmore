@@ -1,0 +1,30 @@
+<html>
+	<title>jquery-readmore example 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="../jquery.readmore.js"></script>
+	<style>
+		body { background: silver; }
+		.container { width: 400px; border: 1px solid gray; background: white; padding: 0px 10px; }
+		#link { color: blue; cursor: pointer; padding: 7px 0px; }
+	</style>
+	<body>
+		<div class="container">
+			<div id="lipsum">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada iaculis mauris quis interdum. Aenean nunc nunc, tempor vel diam vitae, scelerisque egestas diam. Curabitur fringilla accumsan ligula, quis facilisis felis rutrum nec. Etiam consequat ultricies quam, et dignissim neque facilisis non. Sed imperdiet, eros et sollicitudin ullamcorper, tortor ligula tempus nisi, at tincidunt enim tortor ut orci. Sed elit augue, malesuada ut vulputate eget, semper in turpis. Nulla tincidunt risus eu tincidunt imperdiet. Integer volutpat mauris urna, quis egestas sapien viverra ut. Donec porta placerat velit porttitor convallis. Nam consectetur auctor mauris. Etiam tristique mattis nisi at semper. Duis magna elit, rhoncus nec elit ultrices, laoreet semper libero. Donec in erat lobortis, vulputate leo sed, mattis lacus. Quisque aliquam erat in est hendrerit vulputate.
+				</p>
+				<p>
+					Vestibulum sed rutrum nunc, vitae hendrerit est. Integer accumsan condimentum neque, et laoreet lectus iaculis at. Donec mollis varius facilisis. In vulputate justo id lorem consequat, ut convallis ligula semper. Sed accumsan, leo sit amet feugiat sagittis, justo est consectetur dolor, et eleifend metus nisl volutpat ligula. Maecenas sed nisi faucibus, malesuada mauris eget, pharetra turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent elementum nunc ac nunc bibendum fermentum. Nulla a tincidunt massa, sit amet posuere turpis.
+				</p>
+			</div>
+			<div id="link">Read more</div>
+		</div>
+		
+		<script>
+			$("#lipsum").readmore({
+				link : "#link",
+                height: 200
+			});
+		</script>
+	</body>
+</html>
