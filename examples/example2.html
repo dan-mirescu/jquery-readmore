@@ -1,14 +1,21 @@
 <html>
-	<title>jquery-readmore example 1</title>
+	<title>jquery-readmore example 2</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.6.10/jquery.dotdotdot.min.js"></script>
 	<script src="../jquery.readmore.js"></script>
+
 	<style>
 		body { background: silver; }
-		.container { width: 400px; border: 1px solid gray; background: white; padding: 0px 10px; }
-		#link { color: blue; cursor: pointer; padding: 7px 0px; }
+		.container { width: 400px; border: 1px solid gray; background: white; padding: 8px 10px; }
+		#link { color: blue; cursor: pointer; }
+		p { margin: 3px 0px; }
 	</style>
 	<body>
-		<h3>Basic example</h3>
+		<h3>Example using dotdotdot</h3>
+		<a href="http://dotdotdot.frebsite.nl/">jquery.dotdotdot website</a> <br />
+		<a href="https://github.com/BeSite/jQuery.dotdotdot">jquery.dotdotdot on GitHub</a>
+		<p>&nbsp;</p>
+	
 		<div class="container">
 			<div id="lipsum">
 				<p>
@@ -22,13 +29,12 @@
 		</div>
 		
 		<script>
-
-		
-		
-			$("#lipsum").readmore({
+			var options = {
 				link : "#link",
-                height: 200
-			});
+                height: 198,
+				useDotDotDot: true
+			};
+			$("#lipsum").readmore(options);
 		</script>
 		
 		<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>

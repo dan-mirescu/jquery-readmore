@@ -1,16 +1,25 @@
 <html>
-	<title>jquery-readmore example 1</title>
+	<title>jquery-readmore example 4</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="../jquery.readmore.js"></script>
 	<style>
 		body { background: silver; }
-		.container { width: 400px; border: 1px solid gray; background: white; padding: 0px 10px; }
+		.product_image { float: left; }
+		.container { float: left; margin-left: 30px; width: 400px; border: 1px solid gray; background: white; padding: 0px 10px; }
 		#link { color: blue; cursor: pointer; padding: 7px 0px; }
+		.clear { clear: both; }
 	</style>
 	<body>
-		<h3>Basic example</h3>
+		<h3>Example - misc usage</h3>
+		
+		<p>In this example, the text box on the right collapses according to the image height, once the image is fully loaded.</p>
+		<p>Actual usage idea: a product presentation page (with image and description) where you don't want to show all the description at once, in order to keep the page clean.</p>
+		
+		<div class="product_image">
+			<img src="sample.png" />
+		</div>
 		<div class="container">
-			<div id="lipsum">
+			<div id="product_description">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada iaculis mauris quis interdum. Aenean nunc nunc, tempor vel diam vitae, scelerisque egestas diam. Curabitur fringilla accumsan ligula, quis facilisis felis rutrum nec. Etiam consequat ultricies quam, et dignissim neque facilisis non. Sed imperdiet, eros et sollicitudin ullamcorper, tortor ligula tempus nisi, at tincidunt enim tortor ut orci. Sed elit augue, malesuada ut vulputate eget, semper in turpis. Nulla tincidunt risus eu tincidunt imperdiet. Integer volutpat mauris urna, quis egestas sapien viverra ut. Donec porta placerat velit porttitor convallis. Nam consectetur auctor mauris. Etiam tristique mattis nisi at semper. Duis magna elit, rhoncus nec elit ultrices, laoreet semper libero. Donec in erat lobortis, vulputate leo sed, mattis lacus. Quisque aliquam erat in est hendrerit vulputate.
 				</p>
@@ -20,14 +29,18 @@
 			</div>
 			<div id="link">Read more</div>
 		</div>
+		<div class="clear"></div>
 		
 		<script>
-
-		
-		
-			$("#lipsum").readmore({
-				link : "#link",
-                height: 200
+			var img = $(".product_image img").first();
+			img.load(function() {
+				// calculate content height based on product image height...
+				var contentHeight = $(this).height() - 34;
+				// apply readmore effect
+				$("#product_description").readmore({
+					link: "#link",
+					height: contentHeight
+				});
 			});
 		</script>
 		

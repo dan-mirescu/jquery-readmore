@@ -1,0 +1,84 @@
+<html>
+	<title>jquery-readmore example 3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.6.10/jquery.dotdotdot.min.js"></script>
+	<script src="../jquery.readmore.js"></script>
+
+	<style>
+		body { background: silver; }
+		.container { float: left; width: 400px; border: 1px solid gray; background: white; padding: 8px 10px; }
+		#link { color: blue; cursor: pointer; }
+		p { margin: 3px 0px; }
+		.j-rm-hidden { display: none; }
+		.side { float: left; margin-left: 50px; width: 400px; height: 200px; padding: 5px 10px; background: rgb(234, 234, 234); }
+		.clear { clear: both; }
+		input[type=number] { width: 80px; }
+	</style>
+	<body>
+		<h3>Example with toleranceHeight</h3>
+	
+		<p>If difference &lt; toleranceHeight, no "readMore" link is shown (you need to set appropiate CSS property to "j-rm-hidden" class to effectively hide it)</p>
+	
+	
+		<div class="container">
+			<div class="wrapper">
+				<div id="lipsum">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada iaculis mauris quis interdum. Aenean nunc nunc, tempor vel diam vitae, scelerisque egestas diam. Curabitur fringilla accumsan ligula, quis facilisis felis rutrum nec. Etiam consequat ultricies quam, et dignissim neque facilisis non. Sed imperdiet, eros et sollicitudin ullamcorper, tortor ligula tempus nisi, at tincidunt enim tortor ut orci. Sed elit augue, malesuada ut vulputate eget, semper in turpis. Nulla tincidunt risus eu tincidunt imperdiet. Integer volutpat mauris urna, quis egestas sapien viverra ut. Donec porta placerat velit porttitor convallis. Nam consectetur auctor mauris. Etiam tristique mattis nisi at semper. Duis magna elit, rhoncus nec elit ultrices, laoreet semper libero. Donec in erat lobortis, vulputate leo sed, mattis lacus. Quisque aliquam erat in est hendrerit vulputate.
+					</p>
+					<p>
+						Vestibulum sed rutrum nunc, vitae hendrerit est. Integer accumsan condimentum neque, et laoreet lectus iaculis at. Donec mollis varius facilisis. In vulputate justo id lorem consequat, ut convallis ligula semper. Sed accumsan, leo sit amet feugiat sagittis, justo est consectetur dolor, et eleifend metus nisl volutpat ligula. Maecenas sed nisi faucibus, malesuada mauris eget, pharetra turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent elementum nunc ac nunc bibendum fermentum. Nulla a tincidunt massa, sit amet posuere turpis.
+					</p>
+				</div>
+			</div>
+			<div id="link" class="j-rm-hidden">Read more</div>
+		</div>
+		
+		<div class="side">
+			<p><b>Actual container height:</b> <span id="side-actualheight"></span></p>
+			<p><b>jquery.readmore height value:</b> <input type="number" id="side-height" value="" /></p>
+			<p><b>Difference:</b> <span id="side-difference"></span> <br /></p>
+			
+			<b>jquery.readmore toleranceHeight value:</b> <input type="number" id="side-toleranceHeight" value="10" /><br />
+			<button id="side-apply">Apply</button>
+			
+			<p id="side-message">&nbsp;</p>
+		</div>
+		<div class="clear"></div>
+		
+		<script>
+			var lipsum = $("#lipsum").html();
+			$("#side-actualheight").text($("#lipsum").height());
+			$("#side-height").val($("#lipsum").height() - 5);
+			$("#side-difference").text(5);
+
+		
+			$("#side-height").change(function() {
+				$("#side-difference").text($("#side-actualheight").text() - $("#side-height").val());
+			});
+		
+			$("#side-apply").click(function() {
+				$("#lipsum").remove();
+				$(".wrapper").append('<div id="lipsum">' + lipsum + '</div>');
+				var height = $("#side-height").val();
+				var toleranceHeight = $("#side-toleranceHeight").val();
+				
+				$("#lipsum").readmore({
+					link: "#link",
+					height: height,
+					toleranceHeight: toleranceHeight
+				});
+				
+				if($("#side-actualheight").text() - height <= toleranceHeight) {
+					$("#side-message").text("Difference <= toleranceHeight. Read more link not shown.");
+				}
+				else {
+					$("#side-message").text("Difference > toleranceHeight. Read more link shown.");
+				}
+			});
+		</script>
+		
+		<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+		<a href="https://github.com/dan-mirescu/jquery-readmore">jquery.readmore</a>
+	</body>
+</html>
