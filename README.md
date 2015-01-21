@@ -1,5 +1,5 @@
 # jquery-readmore
-A "read more" implementation on top of jQuery with verbose comments. Supports animation on expanding and the optional use of jquery-dotdotdot for smart text trimming.
+A "read more" implementation on top of jQuery with verbose comments. Supports animation on expanding and the optional use of [jquery-dotdotdot](https://github.com/BeSite/jQuery.dotdotdot) for smart text trimming.
 
 NOTE: This readme files as well as the repository will be updated shortly. All script parameters will be documented and more use cases and examples will follow.
 
@@ -39,6 +39,14 @@ $("#long_text").readmore({
 	height: 200
 });
 ```
+
+Examples
+-------
+* [Basic example](http://dan-mirescu.github.io/jquery_readmore/examples/example1.html)
+* [Example using dotdotdot](http://dan-mirescu.github.io/jquery_readmore/examples/example2.html)
+* [Example with toleranceHeight](http://dan-mirescu.github.io/jquery_readmore/examples/example3.html)
+* [Example - misc usage](http://dan-mirescu.github.io/jquery_readmore/examples/example4.html) - collapse a container to the height of a nearby image
+
 
 Parameters
 --------
