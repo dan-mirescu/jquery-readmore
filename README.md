@@ -36,7 +36,7 @@ After including jquery.readmore.js in your page..
 ```js
 $("#long_text").readmore({
 	link : "#link",
-  height: 200
+	height: 200
 });
 ```
 
@@ -44,18 +44,18 @@ Parameters
 --------
 Note: Below, "element" refers to the HTML DOM element onto which jquery-readmore is applied.
 
-*height* : required (number). This is the height to which the element is collapsed
+**height** : required (number). This is the height to which the element is collapsed
 
-*toleranceHeight* : optional (number), defaults to "10". If the difference between the initial element height and the collapsed height is smaller than this parameter, the "Read more" link is hidden (be sure to implement ".j-rm-hidden"). This is useful for fine tuning in some cases involving CSS margins and paddings on the element.
+**toleranceHeight** : optional (number), defaults to "10". If the difference between the initial element height and the collapsed height is smaller than this parameter, the "Read more" link is hidden (be sure to implement ".j-rm-hidden"). This is useful for fine tuning in some cases involving CSS margins and paddings on the element.
 
-*link* : required (string). The selector of the HTML DOM element which is the link which will trigger the expand / collapse of the element.
+**link** : required (string). The selector of the HTML DOM element which is the link which will trigger the expand / collapse of the element.
 
-*readMoreMsg* : optional (string), defaults to "Read more". The text that is displayed inside the link when the element is collapsed.
+**readMoreMsg** : optional (string), defaults to "Read more". The text that is displayed inside the link when the element is collapsed.
 
-*readLessMsg* : optional (string), defaults to "Read less". The text that is displayed inside the link when the element is expanded.
+**readLessMsg** : optional (string), defaults to "Read less". The text that is displayed inside the link when the element is expanded.
 
-*useDotDotDot* : optional (boolean), defaults to "false". Whether to use the third-party script jquery.dotdotdot to handle text trimming.
+**useDotDotDot** : optional (boolean), defaults to "false". Whether to use the third-party script jquery.dotdotdot to handle text trimming.
 
-*paramsDotDotDot* : optional (object), defaults to "{}". An object containing parameters that will be sent to jquery.dotdotdot (in case it is enabled).
+**paramsDotDotDot** : optional (object), defaults to "{}". An object containing parameters that will be sent to jquery.dotdotdot (in case it is enabled).
 
-*overflowHeightGap* : optional (number), defaults to 0 : When "useDotDotDot" is activated, there may be a height difference between the trimmed state of dotdotdot and the default jquery-readmore trimmed state (see source for more details). This parameter can be used to fine tune this difference. This is usually not required.
+**overflowHeightGap** : optional (number), defaults to 0 : When "useDotDotDot" is activated, there may be a height difference between the trimmed state of dotdotdot and the default jquery-readmore trimmed state (see source for more details). This parameter can be used to fine tune this difference. This is usually not required.
