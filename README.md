@@ -1,8 +1,6 @@
 # jquery-readmore
 A "read more" implementation on top of jQuery with verbose comments. Supports animation on expanding and the optional use of [jquery-dotdotdot](https://github.com/BeSite/jQuery.dotdotdot) for smart text trimming.
 
-NOTE: This readme files as well as the repository will be updated shortly. All script parameters will be documented and more use cases and examples will follow.
-
 First you should know...
 ------
 This script expects the toggling link to already exist in the DOM. The link can be any tag type. The text inside the link will change according to the current state (expanded or collapsed). The link is identified by a selector.
